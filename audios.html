@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio </title>
+    <style type="text/css">
+        main {
+            color: grey;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Aligns sections to start and end */
+        }
+
+        main section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: flex-start;
+        }
+
+        main section audio {
+            margin-bottom: 20px; /* Add some space between audios */
+        }
+
+        main section:first-child {
+            order: 1; /* Move first section to the start */
+        }
+
+        main section:not(:first-child) {
+            order: 2; /* Move subsequent sections to the end */
+        }
+    </style>
+</head>
+<body>
+<header style="font-family: 'Arial Rounded MT Bold'; font-size: 22px;">
+    <div style="display: flex; align-items: center;">
+        <div>
+            <img src="./one.jpeg" width="100" height="55" alt="Logo">
+        </div>
+        <div style="display: flex; flex: 1;">
+            <div>
+                <a href="videos.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Home</a>
+                <a href="about.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">About</a>
+                <a href="contact.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Contact</a>
+                <a href="param.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Parameter</a>
+                <a href="audios.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Audio</a>
+            </div>
+        </div>
+    </div>
+</header>
+<hr>
+<main>
+    <center>
+        <section>
+            <audio controls>
+                <source src="./AUDIO/soja.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio>
+            <br>
+            <caption>soja by bwiza </caption>
+            <br>
+            <button onclick="previousAudio()">Previous</button>
+            <button onclick="togglePlayPause()">Play/Pause</button>
+            <button onclick="nextAudio()">Next</button>
+            <div>
+                <a href="#comments">&#128172; Comments</a>
+                <a href="#like">&#128077; Like</a>
+                <a href="#dislike">&#128078; Dislike</a>
+                <a href="#subscribers">&#128100; Subscribers</a>
+            </div>
+            <audio controls>
+            <source src="./AUDIO/erega.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>erega mana by herman worship team</caption><br>
+        
+
+    <audio controls>
+            <source src="./AUDIO/funga.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>funga by bruce melody</caption><br>
+        
+   
+
+    <audio controls>
+            <source src="./AUDIO/micro.MP3" type="audio/mpeg">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>micro by devis</caption><br>
+   
+
+    <audio controls>
+            <source src="./AUDIO/yesu arankunda.MP3" type="audio/mpeg">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>yesu arankunda by king james</caption><br>
+        
+       
+    </section>
+
+    <audio controls>
+            <source src="./AUDIO/alyne.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>bae by aline sano </caption><br>
+        
+   
+    <audio controls>
+            <source src="./AUDIO/bienve.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>bienve by dj neptune </caption><br>
+   
+
+    <audio controls>
+            <source src="./AUDIO/al paciano.MP3" type="audio/mp3">
+                Your browser does not support the audio element
+            </audio><br>
+        <caption>al paciano by zizou </caption><br>
+
+        </section>
+
+        <!-- Repeat similar structure for other audio sections -->
+
+    </center>
+</main>
+<hr>
+<footer>
+    <center>UR CBE BIT GROUP B, GROUP: 6 &copy; 2024 &reg; This website displays audios</center>
+</footer>
+
+<script>
+    var audios = [
+        "./musics/uca inzira by elishadai (Music_Audio).mp3",
+        "./musics/Habona_by_Christopher(Official_Music_Video)(128k).mp3",
+        "./musics/Umva icyo ngusa Healing_Worship_Team.mp3",
+        "./musics/Ndacyariho by niyonzima_Catholique_RWANDA.mp3",
+         "./musics/wait for me.mp3",
+         "./musics/i will be there.mp3",
+        "./musics/wanyujuje by prosper nkomezi.mp3",
+       
+
+    ];
+    var currentAudioIndex = 0;
+    var audioPlayer = document.querySelector('audio');
+
+    function togglePlayPause() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    }
+
+    function nextAudio() {
+        currentAudioIndex = (currentAudioIndex + 1) % audios.length;
+        audioPlayer.src = audios[currentAudioIndex];
+        audioPlayer.play();
+    }
+
+    function previousAudio() {
+        currentAudioIndex = (currentAudioIndex - 1 + audios.length) % audios.length;
+        audioPlayer.src = audios[currentAudioIndex];
+        audioPlayer.play();
+    }
+</script>
+
+</body>
+</html>

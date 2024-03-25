@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video  </title>
+    <style type="text/css">
+        main {
+            color: grey;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        main section {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: flex-start;
+        }
+/* Add some space between videos */
+        main video {
+            margin-bottom: 20px; 
+        }
+/* Align first video to the left */
+        main section:first-child video {
+            align-self: flex-start; 
+        }
+    </style>
+</head>
+<body>
+<header style="font-family: 'Arial Rounded MT Bold'; font-size: 22px;">
+    <div style="display: flex; align-items: center;">
+        <div>
+            <img src="./video.PNG" width="100" height="55" alt="Logo">
+        </div>
+        <div style="display: flex; flex: 1;">
+            <div>
+                <a href="videos.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Home</a>
+                <a href="about.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">About</a>
+                <a href="contact.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Contact</a>
+                <a href="param.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Parameter</a>
+                <a href="audios.html" style="padding: 10px; color: BLACK; background-color:PINK; text-decoration: none; margin-right: 15px;">Audio</a>
+            </div>
+        </div>
+    </div>
+</header>
+<hr>
+<main>
+    <section>
+        <video width="600" height="420" controls>
+            <source src="./VIDEO/ni bande.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>True promise Nibande(Music_Video)</caption><br>
+        <button onclick="previousVideo()">Previous</button>
+        <button onclick="togglePlayPause()">Play/Pause</button>
+        <button onclick="nextVideo()">Next</button>
+        <div>
+            <a href="#comments">&#128172; Comments</a> 
+            <a href="#like">&#128077; Like</a> 
+            <a href="#dislike">&#128078; Dislike</a> 
+            <a href="#subscribers">&#128100; Subscribers</a>
+        </div>
+    </section>
+
+    <section>
+        <video width="400" height="220" controls>
+            <source src="./VIDEO/iriba.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>Iriba  Vestine&Dorcas-Remix--Official Music Video</caption><br>
+        
+        <video width="400" height="220" controls>
+            <source src="./VIDEO/umugozi.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>umugozi</caption><br>
+    
+
+        <video width="400" height="220" controls>
+            <source src="./VIDEO/ndakubabariye.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>Israel mbonyi - ndakubabariye- OFFICIAL VIDEO-2024</caption><br>
+        
+
+        <video width="400" height="220" controls>
+            <source src="./VIDEO/solo.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>Nel ngabo - solo OFFICIAL VIDEO-2024 (1080p).mp4.vm</caption><br>
+        
+       <video width="400" height="220" controls>
+            <source src="./VIDEO/dusuma.MP4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>Meddy - dusuma -Official Video</caption><br>
+        
+    </section>
+</main>
+<hr>
+<footer>
+    <center>UR CBE BIT GROUP B , GROUP: 6 &copy; 2024 &reg; This website displays videos</center> 
+</footer>
+
+<script>
+    var videos = [
+        "./musics/True promise Nibande(Music_Video).mp4",
+        "./musics/Iriba-Music Video-.mp4",
+        "./musics/Gen_z COMEDY.mp4",
+        "./musics/Ndakubabariye-OFFICIAL VIDEO-2024.mp4",
+        "./musics/solo(video).mp4",
+        "./musics/my vow Official Video-.mp4"];
+    
+    var currentVideoIndex = 0;
+    var videoPlayer = document.querySelector('video');
+
+    function togglePlayPause() {
+        if (videoPlayer.paused) {
+            videoPlayer.play();
+        } else {
+            videoPlayer.pause();
+        }
+    }
+
+    function nextVideo() {
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        videoPlayer.src = videos[currentVideoIndex];
+        videoPlayer.play();
+    }
+
+    function previousVideo() {
+        currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+        videoPlayer.src = videos[currentVideoIndex];
+        videoPlayer.play();
+    }
+</script>
+
+</body>
+</html>
